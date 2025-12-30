@@ -21,9 +21,13 @@ database.connect();
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
+const allowedsites = [
+	'https://study-notion-wheat-gamma.vercel.app',
+	'https://study-notion-abhas-projects-d141597c.vercel.app'
+]
 app.use(
 	cors({
-		origin:"http://localhost:3000",
+		origin:allowedsites,
 		credentials:true,
 	})
 )
